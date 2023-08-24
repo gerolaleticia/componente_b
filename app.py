@@ -23,7 +23,7 @@ produto_tag = Tag(name="Produto", description="Adição, visualização e remoç
 def home():
     """Redireciona para /openapi, tela que permite a escolha do estilo de documentação.
     """
-    return redirect('/openapi')
+    return redirect('/openapi/swagger')
 
 
 @app.post('/produto', tags=[produto_tag],

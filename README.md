@@ -48,7 +48,7 @@ Navegue até o diretório que contém o Dockerfile e o requirements.txt no termi
 Uma vez criada a imagem, para executar o container basta executar, como administrador, seguinte o comando:
 
 ```
-(env)$ docker run -p 5002:5002 componente-b
+(env)$ docker run -p 5000:5000 componente-b
 ```
 
 Uma vez executando, para acessar a API, basta abrir o [http://localhost:5000/#/](http://localhost:5002/#/) no navegador para verificar o status da API em execução.
