@@ -1,5 +1,9 @@
 # Microserviço: produto premium
 
+<p float="left">
+
+ <img src="https://user-images.githubusercontent.com/59067501/267109015-98556724-6c57-4212-9d5f-36a9a0b20426.jpg" width="600" />
+
 O objetivo da aplicação é trazer, em uma única tela interativa, o setor de previsões premium da aplicação Let Me Sea. Dados como temperatura da água, temperatura do dia e localização da praia compõe as previsões premium, que rendem aos usuários que colaborarem a participação em sorteios.
 
 O objetivo principal é estimular o compartilhamento de informações premium e facilitar a escolha do wetsuit do dia. 
