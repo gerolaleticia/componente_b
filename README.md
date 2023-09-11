@@ -1,8 +1,8 @@
 # Microserviço: produto premium
 
-Este pequeno projeto faz parte do material diático da Disciplina **Desenvolvimento Full Stack Básico** 
+O objetivo da aplicação é trazer, em uma única tela interativa, o setor de previsões premium da aplicação Let Me Sea. Dados como temperatura da água, temperatura do dia e localização da praia compõe as previsões premium, que rendem aos usuários que colaborarem a participação em sorteios.
 
-O objetivo aqui é ilutsrar o conteúdo apresentado ao longo das três aulas da disciplina.
+O objetivo principal é estimular o compartilhamento de informações premium e facilitar a escolha do wetsuit do dia. 
 
 ---
 ## Como executar 
