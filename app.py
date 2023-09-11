@@ -135,4 +135,38 @@ def del_produto(query: ProdutoBuscaSchema):
         logger.warning(f"Erro ao deletar produto #'{produto_nome}', {error_msg}")
         return {"mesage": error_msg}, 404
 
+@app.put('/produto', tags=[produto_tag],
+          responses={"200": ProdutoViewSchema, "409": ErrorSchema, "400": ErrorSchema})
+def add_produto_put(form: ProdutoSchema):
+    """Adiciona uma previsão premium à base de dados
+
+    Retorna uma representação das previsões premium disponibilizadas no dia.
+    """
+    produto = Produto(
+        nome=form.nome,
+        quantidade=form.quantidade,
+        valor=form.valor)
+    logger.debug(f"Adicionada previsao de nome: '{produto.nome}'")
+    try:
+        # criando conexão com a base
+        session = Session()
+        # adicionando produto
+        session.add(produto)
+        # efetivando o camando de adição de novo item na tabela
+        session.commit()
+        logger.debug(f"Adicionada previsao de nome: '{produto.nome}'")
+        return apresenta_produto(produto), 200
+
+    except IntegrityError as e:
+        # como a duplicidade do nome é a provável razão do IntegrityError
+        error_msg = "Previsão desta praia já adicionada já salvo na base :/"
+        logger.warning(f"Erro ao adicionar previsão '{produto.nome}', {error_msg}")
+        return {"mesage": error_msg}, 409
+
+    except Exception as e:
+        # caso um erro fora do previsto
+        error_msg = "Não foi possível salvar novo item :/"
+        logger.warning(f"Erro ao adicionar previsão premium '{produto.nome}', {error_msg}")
+        return {"mesage": error_msg}, 400
+
 
